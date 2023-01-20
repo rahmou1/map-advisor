@@ -20,7 +20,7 @@ const Register = ({ setShowRegister }) => {
 
     try {
       await axios.post(
-        "https://maptravelworld.onrender.com/users/register",
+        "https://maptravelworld.onrender.com/api/users/register",
         newUser
       );
       setError(false);
