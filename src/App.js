@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("/pins");
+        const res = await axios.get("https://maptravelworld.onrender.com/pins");
         setPins(res.data.message);
       } catch (error) {
         console.log(error);
@@ -61,7 +61,10 @@ function App() {
       long: newPlace.long,
     };
     try {
-      const res = await axios.post("/pins", newPin);
+      const res = await axios.post(
+        "https://maptravelworld.onrender.com/pins",
+        newPin
+      );
       setPins([...pins, res.data.message]);
       setNewPlace(null);
     } catch (error) {

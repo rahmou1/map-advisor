@@ -17,7 +17,10 @@ const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
     };
 
     try {
-      const res = await axios.post("/users/login", user);
+      const res = await axios.post(
+        "https://maptravelworld.onrender.com/users/login",
+        user
+      );
 
       myStorage.setItem("user", res.data.message.username);
       setCurrentUser(res.data.message.username);
